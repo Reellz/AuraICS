@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css"
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Lato, DM_Mono } from 'next/font/google'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '900'],
   variable: '--font-playfair', 
 });
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lato'
+})
+
+const mono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-dm_mono'
+})
 
 export const metadata: Metadata = {
   title: "Aura International Christian School",
@@ -19,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={playfair.variable}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${lato.variable} ${mono.variable}`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
       </body>

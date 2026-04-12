@@ -11,6 +11,8 @@
   --color-brand-cream: #f8f5f0;
 
   --font-display: var(--font-playfair), serif;
+  --font-lato: var(--font-lato), serif;
+  --font-dm_mono: var(--font-mono), serif;
 }
 
 .font-brand-header {
@@ -19,4 +21,16 @@
 
 .font-branding-header2 {
   @apply font-display font-bold tracking-tight;
+}
+
+.body-text {
+  @apply font-lato font-normal tracking-tight;
+}
+
+.ui-label {
+  @apply font-lato font-bold uppercase tracking-tight;
+}
+
+.dm-mono {
+  @apply font-mono font-light tracking-tight
 }
