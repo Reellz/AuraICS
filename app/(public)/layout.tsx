@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer} from "../components/ui/layout";
+import { Navbar, Footer} from "../components/ui/ui-layout";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
