@@ -1,0 +1,12 @@
+components lists for each page.
+Global:
+1. Prmary button
+2. Secondary button
+3. Accent button (like on why aura section)
+4. Navbar
+5. Footer
+
+Homepage:
+1. Hero
+2. Why Aura section
+3. Service cards
