@@ -65,3 +65,11 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.why-orange-icon {
+  filter: brightness(0) saturate(100%)
+    invert(54%) sepia(69%) saturate(720%)
+    hue-rotate(337deg) brightness(94%) contrast(91%);
+}
+

@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div>
         <Navbar />
       </div>
-      <div className="flex h-screen flex-col md:flex-row md:overflow-hidden bg-brand-cream min-h-screen ">
+      <div className="flex flex-col md:flex-row md:overflow-hidden bg-brand-cream min-h-screen ">
         <div className="grow">{children}</div>
       </div>
       <div>

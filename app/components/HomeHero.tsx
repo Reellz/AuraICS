@@ -127,8 +127,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue 
-      <a
-        href="#about"
+      <h2
         aria-label="Scroll to learn more about AICS"
         className="mx-auto mb-4 flex w-fit flex-col items-center gap-1 text-brand-primary/60 transition hover:text-brand-primary sm:mb-6 sm:gap-1.5"
       >
@@ -149,7 +148,7 @@ export default function Hero() {
             strokeLinejoin="round"
           />
         </svg>
-      </a> */}
+      </h2> */}
     </section>
   );
 }
