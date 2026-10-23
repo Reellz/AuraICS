@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css"
 import { Playfair_Display, Lato, DM_Mono } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
         <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
