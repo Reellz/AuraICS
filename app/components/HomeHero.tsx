@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { PrimaryButton } from "./ui/Button";
 
 type HeroSlide = {
   src: string;
@@ -61,13 +62,10 @@ export default function Hero() {
             every student grow into who they were created to be.
           </p>
 
-          <a
-            href="/about"
-            className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-brand-orange px-3 py-2 text-xs font-bold font-lato text-brand-green-900 transition hover:bg-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40 sm:mt-6 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm md:mt-7 md:px-6 md:py-3.5 md:text-base"
-          >
-            Discover AICS
-            <span aria-hidden="true">→</span>
-          </a>
+          <PrimaryButton
+          text="Discover AICS"
+          href="/about"
+          ></PrimaryButton>
 
           <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-medium text-brand-green-900/70 sm:mt-7 sm:gap-x-4 sm:text-xs md:mt-8 md:gap-x-6 md:text-sm">
             {["Godliness", "Integrity", "Diligence", "Humility"].map(
