@@ -123,30 +123,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Scroll cue 
-      <h2
-        aria-label="Scroll to learn more about AICS"
-        className="mx-auto mb-4 flex w-fit flex-col items-center gap-1 text-brand-primary/60 transition hover:text-brand-primary sm:mb-6 sm:gap-1.5"
-      >
-        <span className="text-[9px] uppercase tracking-widest sm:text-[11px]">
-          Scroll
-        </span>
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          className="h-3.5 w-3.5 sm:h-4 sm:w-4"
-        >
-          <path
-            d="m7 10 5 5 5-5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </h2> */}
     </section>
   );
 }
