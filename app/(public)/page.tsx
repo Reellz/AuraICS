@@ -1,6 +1,7 @@
 import HomeHero from "../components/HomeHero";
 import Column from "../components/Column";
 import Card from "../components/ui/Card";
+import SchoolLife from "../components/SchoolLife";
 
 interface CardItem {
   src: string;
@@ -42,7 +43,7 @@ export default function Page() {
           {/* Heading */}
           <div className="mb-10 text-center sm:mb-14">
             <h2 className="font-brand-header text-3xl text-brand-green-900 sm:text-4xl lg:text-5xl">
-              A Personalized Learning Experience
+              An Individualized Learning Experience
               <br className="hidden sm:block" /> For Each Child
             </h2>
           </div>
@@ -61,6 +62,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <SchoolLife/>
     </main>
   );
 }

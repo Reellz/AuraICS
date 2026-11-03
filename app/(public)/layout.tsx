@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Footer} from "../components/ui/ui-layout";
+import BackToTop from "../components/ui/BackToTop";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="grow">{children}</div>
       </div>
       <div>
+        <BackToTop/>
         <Footer />
       </div>
     </main>
