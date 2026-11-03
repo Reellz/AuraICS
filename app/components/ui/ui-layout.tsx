@@ -106,7 +106,7 @@ export function Navbar() {
   const linkClasses = (href: string) =>
     `ui-label rounded-md px-4 py-3 transition-colors duration-200 ${
       isActive(href)
-        ? "bg-white/10 text-brand-gold border-l-4 border-brand-gold"
+        ? "bg-white/10 text-brand-gold"
         : "text-brand-cream hover:bg-white/10 hover:text-brand-gold"
     }`;
 
@@ -314,14 +314,7 @@ export function Navbar() {
                 >
                   <span className="flex items-center justify-between gap-3">
                     {link.name}
-                    {isActive(link.href) && (
-                      <span
-                        aria-hidden="true"
-                        className="text-brand-gold"
-                      >
-                        ✓
-                      </span>
-                    )}
+                    {isActive(link.href)}
                   </span>
                 </Link>
               ))}
