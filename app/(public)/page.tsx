@@ -2,6 +2,8 @@ import HomeHero from "../components/HomeHero";
 import Column from "../components/Column";
 import Card from "../components/ui/Card";
 import SchoolLife from "../components/SchoolLife";
+import Image from "next/image";
+import Link from "next/link";
 
 interface CardItem {
   src: string;
@@ -62,8 +64,22 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       <SchoolLife/>
+      <section className="bg-brand-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+            <div className="image">
+              <Image 
+              src="/global/home/"
+              alt="Student doing some activity"
+              className=""
+              width={24}
+              height={17}
+              />
+            </div>
+            <div className="text">
+              <h2>Start your child&apos;s academic journey at Aura International Christian School</h2>
+              <p></p>
+            </div>
+      </section>
     </main>
   );
 }
