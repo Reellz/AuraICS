@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SchoolLife() {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-brand-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       {/* Decorative shapes */}
       <div
         aria-hidden="true"
@@ -25,8 +25,8 @@ export default function SchoolLife() {
         className="pointer-events-none absolute bottom-8 left-20 hidden text-brand-gold/50 sm:block"
       >
         <svg
-          width="70"
-          height="28"
+          width="100"
+          height="48"
           viewBox="0 0 100 40"
           fill="none"
           stroke="currentColor"
