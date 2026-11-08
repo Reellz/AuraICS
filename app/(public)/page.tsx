@@ -105,6 +105,39 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section className="bg-brand-green-100 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="ui-label text-sm text-brand-primary">Our Approach</p>
+
+        <h2 className="font-brand-header mt-3 text-3xl text-brand-green-900 sm:text-4xl lg:text-5xl">
+          Education shaped around the whole child
+        </h2>
+
+        <div className="mx-auto mt-4 h-0.5 w-16 bg-brand-gold" />
+
+        <p className="body-text mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-green-900/80 sm:text-lg">
+          Every programme at AuraICS is designed to support academic growth,
+          spiritual formation, and character development together. We work
+          alongside families to create an environment where students are known,
+          challenged, and equipped for what comes next.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/academics"
+            className="inline-flex items-center rounded-lg bg-brand-primary px-6 py-3.5 font-lato text-base font-bold text-brand-cream transition hover:bg-brand-green-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
+          >
+            Explore Academics
+          </Link>
+          <Link
+            href="/admissions"
+            className="inline-flex items-center rounded-lg border border-brand-primary/30 px-6 py-3.5 font-lato text-base font-bold text-brand-green-900 transition hover:border-brand-primary hover:bg-brand-green-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
+          >
+            Begin Admissions
+          </Link>
+        </div>
+      </div>
+    </section>
     </main>
   );
 }
