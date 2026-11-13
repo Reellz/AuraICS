@@ -3,5 +3,6 @@ export const ROUTES = {
     about: '/about',
     academics: '/academics',
     admissions: 'admissions',
-    contact: '/contact'
+    contact: '/contact',
+    gallery: '/gallery'
 } as const;

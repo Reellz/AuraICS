@@ -9,7 +9,7 @@ import { Socials } from "@/utils/socials";
 
 const NAV_LINKS = [
   { name: "Home", href: ROUTES.home },
-  { name: "About", href: ROUTES.about },
+  { name: "About AICS", href: ROUTES.about },
   { name: "Academics", href: ROUTES.academics },
   { name: "Admissions", href: ROUTES.admissions },
 ];
@@ -368,6 +368,7 @@ const FOOTER_LINKS = {
   portal: [
     { name: "Parent Portal", href: "/portals/parents" },
     { name: "Student Handbook", href: "/portals/handbook" },
+    { name: "Gallery", href:"/gallery" },
   ],
 };
 
@@ -389,7 +390,7 @@ export function Footer() {
                   width={44}
                   height={44}
                   loading="lazy"
-                  className="object-contain p-1"
+                  className="object-contain"
                 />
               </div>
 
