@@ -4,14 +4,15 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ROUTES } from "@/app/routes";
+import { ROUTES } from "@/lib/routes";
 import { Socials } from "@/utils/socials";
 
 const NAV_LINKS = [
   { name: "Home", href: ROUTES.home },
   { name: "About AICS", href: ROUTES.about },
   { name: "Academics", href: ROUTES.academics },
-  { name: "Admissions", href: ROUTES.admissions },
+  { name: "Gallery", href: ROUTES.gallery },
+  { name: "Events", href: ROUTES.events },
 ];
 
 export function Navbar() {
@@ -51,9 +52,7 @@ export function Navbar() {
       if (event.key !== "Tab" || !drawerRef.current) return;
 
       const focusable = Array.from(
-        drawerRef.current.querySelectorAll<HTMLElement>(
-          focusableSelector
-        )
+        drawerRef.current.querySelectorAll<HTMLElement>(focusableSelector),
       ).filter((element) => element.getClientRects().length > 0);
 
       if (focusable.length === 0) {
@@ -67,15 +66,13 @@ export function Navbar() {
 
       if (
         event.shiftKey &&
-        (activeElement === first ||
-          !drawerRef.current.contains(activeElement))
+        (activeElement === first || !drawerRef.current.contains(activeElement))
       ) {
         event.preventDefault();
         last.focus();
       } else if (
         !event.shiftKey &&
-        (activeElement === last ||
-          !drawerRef.current.contains(activeElement))
+        (activeElement === last || !drawerRef.current.contains(activeElement))
       ) {
         event.preventDefault();
         first.focus();
@@ -155,9 +152,7 @@ export function Navbar() {
 
             <Link
               href={ROUTES.contact}
-              aria-current={
-                isActive(ROUTES.contact) ? "page" : undefined
-              }
+              aria-current={isActive(ROUTES.contact) ? "page" : undefined}
               className={`ui-label rounded-sm px-4 py-2 shadow-sm transition-colors duration-200 ${
                 isActive(ROUTES.contact)
                   ? "bg-brand-orange text-brand-cream"
@@ -175,7 +170,9 @@ export function Navbar() {
             onClick={() => setIsOpen((previous) => !previous)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             className="inline-flex shrink-0 items-center justify-center rounded-md p-2 text-brand-cream transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold md:hidden"
           >
             {isOpen ? (
@@ -307,9 +304,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={closeMenu}
                   tabIndex={isOpen ? 0 : -1}
-                  aria-current={
-                    isActive(link.href) ? "page" : undefined
-                  }
+                  aria-current={isActive(link.href) ? "page" : undefined}
                   className={linkClasses(link.href)}
                 >
                   <span className="flex items-center justify-between gap-3">
@@ -325,24 +320,23 @@ export function Navbar() {
               href={ROUTES.contact}
               onClick={closeMenu}
               tabIndex={isOpen ? 0 : -1}
-              aria-current={
-                isActive(ROUTES.contact) ? "page" : undefined
-              }
+              aria-current={isActive(ROUTES.contact) ? "page" : undefined}
               className={`ui-label mt-6 flex min-h-14 items-center justify-center rounded-md px-5 py-4 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream ${
                 isActive(ROUTES.contact)
                   ? "bg-brand-orange text-brand-cream"
                   : "bg-brand-gold text-brand-green-900 hover:bg-brand-orange hover:text-brand-cream"
               }`}
             >
-              Contact Us <span aria-hidden="true" className="ml-3">→</span>
+              Contact Us{" "}
+              <span aria-hidden="true" className="ml-3">
+                →
+              </span>
             </Link>
 
             {/* Drawer footer */}
             <div className="mt-auto pt-10">
               <div className="mb-4 h-px bg-brand-gold/30" />
-              <p className="font-branding-header2 text-xl">
-                Growing to glow.
-              </p>
+              <p className="font-branding-header2 text-xl">Growing to glow.</p>
               <p className="body-text mt-2 text-sm text-brand-cream/70">
                 Faith. Character. Excellence.
               </p>
@@ -353,7 +347,6 @@ export function Navbar() {
     </>
   );
 }
-
 
 const FOOTER_LINKS = {
   academics: [
@@ -368,7 +361,7 @@ const FOOTER_LINKS = {
   portal: [
     { name: "Parent Portal", href: "/portals/parents" },
     { name: "Student Handbook", href: "/portals/handbook" },
-    { name: "Gallery", href:"/gallery" },
+    { name: "Gallery", href: "/gallery" },
   ],
 };
 

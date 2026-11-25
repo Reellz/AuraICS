@@ -4,5 +4,6 @@ export const ROUTES = {
     academics: '/academics',
     admissions: 'admissions',
     contact: '/contact',
-    gallery: '/gallery'
+    gallery: '/gallery',
+    events: '/events'
 } as const;
