@@ -3,8 +3,15 @@
 import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ROUTES } from "@/app/routes";
-import { Target, Eye, Sun, ShieldCheck, Gauge, HeartHandshake } from "lucide-react";
+import { ROUTES } from "@/lib/routes";
+import {
+  Target,
+  Eye,
+  Sun,
+  ShieldCheck,
+  Gauge,
+  HeartHandshake,
+} from "lucide-react";
 
 const ABOUT_DATA = {
   missionVision: [
