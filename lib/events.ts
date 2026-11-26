@@ -6,35 +6,23 @@ export type SchoolEvent = {
   location: string;
   summary: string;
   sample?: boolean;
+  image?: string;
+  video?: string;
 };
 
 /** Replace these. They are placeholders, not published AICS events. */
 export const EVENTS: SchoolEvent[] = [
   {
-    id: "sample-gathering",
-    title: "Community gathering",
-    date: "2026-12-05",
-    time: "09:00",
+    id: "project_showcase",
+    title: "Project Showcase",
+    date: "2026-12-30",
+    time: "09:00 a.m.",
     location: "Aura International Christian School, Najjera, Uganda",
-    summary: "Sample listing. Replace this paragraph with what will actually happen, who it is for, and how families should prepare.",
-    sample: true,
-  },
-  {
-    id: "sample-devotion",
-    title: "Morning devotion",
-    date: "2026-12-12",
-    time: "08:00",
-    location: "Aura International Christian School, Najjera, Uganda",
-    summary: "Sample listing. Replace with the real description.",
-    sample: true,
-  },
-  {
-    id: "sample-learning",
-    title: "Learning showcase",
-    date: "2026-12-18",
-    location: "Aura International Christian School, Najjera, Uganda",
-    summary: "Sample listing. Replace with the real description.",
-    sample: true,
+    summary:
+      "Students will be showcasing projects that are derived from the skills training they have been receiving. Parents are requested to attend and support their children",
+    sample: false,
+    video: "../global/events/pro-show.mp4"
+
   },
 ];
 

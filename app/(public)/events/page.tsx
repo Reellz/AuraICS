@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
 
@@ -9,32 +9,20 @@ type SchoolEvent = {
   title: string;
   date: string;
   summary: string;
+  image?: string;
+  video?: string;
   sample?: boolean;
 };
 
-/** Replace with real events. These rows are placeholders. */
 const EVENTS: SchoolEvent[] = [
   {
-    id: "sample-gathering",
-    title: "Community gathering",
-    date: "2026-12-05",
+    id: "project_showcase",
+    title: "Project Showcase",
+    date: "2026-12-30",
     summary:
-      "Sample listing. Replace with the real time, place, and description.",
-    sample: true,
-  },
-  {
-    id: "sample-devotion",
-    title: "Morning devotion",
-    date: "2026-12-12",
-    summary: "Sample listing. Replace with the real details.",
-    sample: true,
-  },
-  {
-    id: "sample-learning",
-    title: "Learning showcase",
-    date: "2026-12-18",
-    summary: "Sample listing. Replace with the real details.",
-    sample: true,
+      "Students will be showcasing projects that are derived from the skills training they have been receiving. Parents are requested to attend and support their children.",
+    video: "/global/events/pro-show.mp4",
+    sample: false,
   },
 ];
 
@@ -46,20 +34,12 @@ function formatDate(iso: string) {
   }).format(new Date(`${iso}T00:00:00`));
 }
 
-function shortDate(iso: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric",
-    month: "short",
-  }).format(new Date(`${iso}T00:00:00`));
-}
-
 export default function EventsPage() {
-  const [openId, setOpenId] = useState<string | null>(null);
   const events = [...EVENTS].sort((a, b) => a.date.localeCompare(b.date));
 
   return (
     <main className="bg-brand-cream px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-6xl">
         <h1 className="font-brand-header text-4xl text-brand-green-900 sm:text-5xl">
           Our events
         </h1>
@@ -69,46 +49,55 @@ export default function EventsPage() {
             No events are listed yet.
           </p>
         ) : (
-          <ul className="mt-12 border-t border-brand-green-900/10">
-            {events.map((event) => {
-              const open = openId === event.id;
-              return (
-                <li
-                  key={event.id}
-                  className="border-b border-brand-green-900/10 py-6"
-                >
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <p className="text-sm text-brand-orange">
-                        {shortDate(event.date)}
-                      </p>
-                      <h2 className="font-lato mt-1 text-xl font-semibold text-brand-green-900">
-                        {event.title}
-                        {event.sample ? (
-                          <span className="ml-2 text-xs font-medium uppercase tracking-wider text-brand-green-900/40">
-                            Sample
-                          </span>
-                        ) : null}
-                      </h2>
-                      <p className="mt-1 text-sm text-brand-green-900/60">
-                        {formatDate(event.date)}
-                      </p>
-                    </div>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {events.map((event) => (
+              <li key={event.id}>
+                <article className="flex h-full flex-col bg-white rounded-2xl">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-brand-green-900 rounded-t-2xl rounded-b-1/2">
+                    {event.video ? (
+                      <video
+                        className="absolute inset-0 h-full w-full object-cover"
+                        src={event.video}
+                        poster={event.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : event.image ? (
+                      <Image
+                        src={event.image}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                      />
+                    ) : null}
+                  </div>
+
+                  <div className="flex flex-1 flex-col px-5 py-5 bg-brand-green-900/85 text-brand-cream rounded-b-2xl">
+                    <p className="text-sm text-brand-cream">{formatDate(event.date)}</p>
+                    <h2 className="font-lato mt-1 text-xl font-semibold text-[#ADEBB3]">
+                      {event.title}
+                      {event.sample ? (
+                        <span className="ml-2 text-xs font-medium uppercase tracking-wider text-brand-green-900/40">
+                          Sample
+                        </span>
+                      ) : null}
+                    </h2>
+                    <p className="body-text mt-3 line-clamp-3 text-sm ">
+                      {event.summary}
+                    </p>
                     <Link
                       href={`/events/${event.id}`}
-                      className="shrink-0 font-lato text-sm font-semibold text-brand-orange underline-offset-4 hover:underline"
+                      className="mt-5 inline-flex font-lato text-sm font-semibold text-brand-orange underline-offset-4 hover:underline"
                     >
                       Find out more
                     </Link>
                   </div>
-                  {open && (
-                    <p className="body-text mt-4 max-w-xl text-sm text-brand-green-900/80">
-                      {event.summary}
-                    </p>
-                  )}
-                </li>
-              );
-            })}
+                </article>
+              </li>
+            ))}
           </ul>
         )}
 
