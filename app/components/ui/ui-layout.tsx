@@ -142,7 +142,7 @@ export function Navbar() {
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`ui-label rounded-sm py-2 transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-brand-gold"
+                    ? "text-brand-orange"
                     : "text-brand-cream hover:text-brand-gold"
                 }`}
               >

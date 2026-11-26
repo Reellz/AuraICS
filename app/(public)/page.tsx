@@ -71,8 +71,8 @@ export default function Page() {
             {/* Image */}
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[420px]">
               <Image
-                src="/global/home/hero1.jpg"
-                alt="Student participating in a classroom activity"
+                src="/global/home/admis1.jpg"
+                alt="Student potrait."
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

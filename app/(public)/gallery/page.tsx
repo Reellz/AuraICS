@@ -15,27 +15,27 @@ type Photo = {
 const PHOTOS: Photo[] = [
   {
     id: "class",
-    src: "/global/home/hero2.jpg",
-    alt: "A student learning in class at Aura International Christian School",
-    title: "Learning",
+    src: "/global/gallery/gal1.jpg",
+    alt: "Morning devotion at Aura International Christian School",
+    title: "Morning Devotion",
   },
   {
     id: "student",
-    src: "/global/home/hero1.jpg",
-    alt: "An AICS student",
-    title: "A learner",
+    src: "/global/gallery/gal2.jpg",
+    alt: "Nursery students in class",
+    title: "Class-in-session",
   },
   {
     id: "gathering",
-    src: "/global/home/hero3.jpg",
-    alt: "AICS students and staff gathered together",
-    title: "Together",
+    src: "/global/gallery/gal3.jpg",
+    alt: "AICS students together",
+    title: "Students' portrait",
   },
   {
     id: "campus",
     src: "/global/about/hero-bg.jpg",
     alt: "The AICS campus",
-    title: "Campus",
+    title: "Campus Entrance",
   },
   {
     id: "principal",
