@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
+import { submitContact } from "./actions";
 
 const CATEGORIES = [
   "Academics",
@@ -84,23 +85,20 @@ export default function ContactPage() {
     return Object.keys(next).length === 0;
   }
 
-  function submit(event: React.FormEvent) {
+  async function submit(event: React.FormEvent) {
     event.preventDefault();
     if (!validate()) return;
     setStatus("sending");
-    const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone || "Not given"}`,
-      `Category: ${form.category}`,
-      "",
-      form.message,
-    ].join("\n");
-    const href = `mailto:info@auraics.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
-    window.setTimeout(() => {
-      window.location.href = href;
-      setStatus("ready");
-    }, 300);
+
+    const result = await submitContact(form);
+
+    if (!result.ok) {
+      setStatus("error");
+      return;
+    }
+
+    setForm(EMPTY);
+    setStatus("ready");
   }
 
   return (
@@ -156,10 +154,10 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-1">
                   <a
-                    href="mailto:info@auraics.com"
+                    href="mailto:infoaics25@gmail.com"
                     className="font-lato text-base text-brand-green-900 hover:text-brand-orange"
                   >
-                    info@auraics.com
+                    infoaics25@gmail.com
                   </a>
                 </dd>
               </div>
@@ -167,17 +165,14 @@ export default function ContactPage() {
                 <dt className="text-xs font-semibold uppercase tracking-wider text-brand-green-900/50">
                   Location
                 </dt>
-                <dd className="mt-1">
+                <dd className="mt-1 min-w-0">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.907449211147!2d32.6030639871582!3d0.38794740000001726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1005e6c46c5%3A0x9726f02f65d4e8b9!2sAura%20International%20Christian%20School!5e0!3m2!1sen!2sug!4v1795378664562!5m2!1sen!2sug"
-                    width="480"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
                     title="Aura International Christian School location"
-                    className="rounded-2xl"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    className="h-64 w-full rounded-2xl border-0 sm:h-80 lg:h-[420px]"
                   />
                 </dd>
               </div>
@@ -186,7 +181,7 @@ export default function ContactPage() {
 
           <div
             id="contact-form"
-            className="scroll-mt-24 bg-white p-6 sm:p-10 lg:col-span-7"
+            className="scroll-mt-24 min-w-0 bg-white p-5 sm:p-10 lg:col-span-7"
           >
             <h2 className="font-brand-header text-3xl text-brand-green-900">
               Get in touch
@@ -197,7 +192,7 @@ export default function ContactPage() {
             </p>
 
             <form className="mt-8 space-y-5" onSubmit={submit} noValidate>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <Field label="Full name" error={errors.name}>
                   <input
                     className={inputClass}
@@ -254,20 +249,16 @@ export default function ContactPage() {
                   onChange={(e) => update("message", e.target.value)}
                 />
               </Field>
-              <p className="text-xs leading-relaxed text-brand-green-900/55">
-                Use this only for what you are happy to put in an email. The
-                school will use it to reply to your enquiry.
-              </p>
               {status === "ready" && (
                 <p className="text-sm text-brand-green-900" role="status">
-                  Your mail app should now have a message addressed to
-                  info@auraics.com. Send it to reach the school.
+                  Your message has been sent. The school will reply within 1–3
+                  business days.
                 </p>
               )}
               {status === "error" && (
                 <p className="text-sm text-brand-orange" role="alert">
-                  The mail app did not open. Email info@auraics.com or call +256
-                  751 420 955.
+                  The message could not be sent. Email infoaics25@gmail.com or
+                  call +256 751 420 955.
                 </p>
               )}
               <button
@@ -275,7 +266,7 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 className="inline-flex items-center rounded-lg bg-brand-orange px-6 py-3.5 font-lato text-base font-bold text-white transition hover:bg-brand-gold hover:text-brand-green-900 disabled:opacity-60"
               >
-                {status === "sending" ? "Preparing…" : "Send message"}
+                {status === "sending" ? "Sending…" : "Send message"}
               </button>
             </form>
           </div>
