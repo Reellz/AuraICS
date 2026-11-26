@@ -19,7 +19,7 @@ export default async function EventPage({
   const others = EVENTS.filter((item) => item.id !== event.id);
 
   return (
-    <main className="bg-brand-cream px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+    <main className="bg-[#ADEBB3]/20 px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
       <article className="mx-auto max-w-5xl">
         <Link
           href="/events"
