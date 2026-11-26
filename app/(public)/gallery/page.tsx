@@ -116,7 +116,7 @@ export default function GalleryPage() {
             of learning, growth, and community.
           </p>
           <Link
-            href={ROUTES.admissions}
+            href={ROUTES.academics}
             className="mt-8 inline-flex w-fit font-lato text-sm font-semibold text-brand-orange underline-offset-4 hover:underline lg:hidden"
           >
             Explore Admissions
