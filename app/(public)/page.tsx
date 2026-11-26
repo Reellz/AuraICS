@@ -96,7 +96,7 @@ export default function Page() {
               </p>
 
               <Link
-                href="/admissions"
+                href="/academics"
                 className="mt-8 inline-flex w-fit items-center rounded-lg bg-brand-orange px-6 py-3.5 font-lato text-base font-bold text-white transition hover:bg-brand-gold hover:text-brand-green-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/50"
               >
                 Begin the Journey
@@ -125,15 +125,9 @@ export default function Page() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/academics"
-            className="inline-flex items-center rounded-lg bg-brand-primary px-6 py-3.5 font-lato text-base font-bold text-brand-cream transition hover:bg-brand-green-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
+            className="inline-flex items-center rounded-lg bg-brand-primary px-8 py-3.5 font-lato text-base font-bold text-brand-cream transition hover:bg-brand-green-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
           >
             Explore Academics
-          </Link>
-          <Link
-            href="/admissions"
-            className="inline-flex items-center rounded-lg border border-brand-primary/30 px-6 py-3.5 font-lato text-base font-bold text-brand-green-900 transition hover:border-brand-primary hover:bg-brand-green-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
-          >
-            Begin Admissions
           </Link>
         </div>
       </div>
