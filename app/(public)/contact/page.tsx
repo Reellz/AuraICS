@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
 
 const CATEGORIES = [
-  "Admissions",
+  "Academics",
   "Academic programmes",
   "General enquiries",
   "Parent support",
@@ -322,10 +322,10 @@ export default function ContactPage() {
           admissions.
         </p>
         <Link
-          href={ROUTES.admissions}
+          href={ROUTES.academics}
           className="mt-8 inline-flex items-center rounded-lg bg-brand-orange px-6 py-3.5 font-lato text-base font-bold text-white transition hover:bg-brand-gold hover:text-brand-green-900"
         >
-          Explore Admissions
+          Explore Academics
         </Link>
       </section>
     </main>
