@@ -11,7 +11,7 @@ const PROGRAMMES = [
   {
     title: "ACE Curriculum",
     text: "An individualised, mastery-based programme that integrates Christian values with academic learning. Students progress at their own pace through carefully sequenced materials from early years through secondary.",
-    stages: ["Preschool", "Primary", "Secondary", "A-Level"],
+    stages: ["Foundation", "Intermediate", "Senior", "FET"],
   },
   {
     title: "Homeschooling Support",
